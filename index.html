@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data visualization with chart.js</title>
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Side Navbar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="assets/eversparked.png">
+            </div>
+            <p class="side-nav-header">Admin Console</p>
+            <div class="side-nav-elements">
+                <div class="side-nav-element"><i class="material-icons">home</i>Home</div>
+                <div class="side-nav-element"><i class="material-icons">dashboard</i>Dashboard</div>
+                <div class="side-nav-element"><i class="material-icons">bar_chart</i>Reports</div>
+                <div class="side-nav-element"><i class="material-icons">event</i>Forecasting</div>
+                <div class="side-nav-element"><i class="material-icons">drag_handle</i>Limits</div>
+                <div class="side-nav-element"><i class="material-icons">launch</i>Product</div>
+            </div>
+            <p class="side-nav-header">Enter New Data Points</p>
+            <div class="side-nav-elements">
+                <div class="side-nav-element"><i class="material-icons">credit_card</i>Expenses</div>
+                <div class="side-nav-element"><i class="material-icons">euro_symbol</i>Income</div>
+                <div class="side-nav-element"><i class="material-icons">message</i>Messages</div>
+            </div>
+        </div>
+        <div class="main">
+            <!-- Main Header -->
+            <div class="header">
+                <div class="header-elements">
+                    <i class="header-element material-icons">search</i>
+                    <i class="header-element material-icons">settings</i>
+                    <i class="header-element material-icons">notifications_active</i>
+                    <img class="profile-img" src="assets/profile.jpg" alt="profile image of logged in user"></div>
+            </div>
+            <!-- Main Dashboard -->
+            <div class="dashboard">
+                <span class="welcome_message">Welcome <span class="welcome_message_name">John Doe</span></span>
+                <div class="dashboard-header">
+                    <p>Personal Finance</p>
+                    <div class="select-wrapper">
+                        <select name="datepicker" id="datepicker">
+                            <option value="January 2020">January 2020</option>
+                            <option value="February 2020">February 2020</option>
+                            <option value="March 2020">March 2020</option>
+                            <option value="April 2020">April 2020</option>
+                            <option value="April 2020">May 2020</option>
+                            <option value="April 2020">June 2020</option>
+                            <option value="April 2020">July 2020</option>
+                            <option value="April 2020">August 2020</option>
+                            <option value="April 2020">September 2020</option>
+                            <option value="April 2020">October 2020</option>
+                            <option value="April 2020">November 2020</option>
+                            <option value="April 2020">December 2020</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="dashboard-cards">
+                    <div class="card" id="card-1">
+                        <div class="chart-canvas">
+                            <canvas id="LiquidityPlanning"></canvas>
+                        </div>
+                    </div>
+                    <div class="card"  id="card-2">
+                        <div class="chart-canvas">
+                            <div class="chart-options">
+                                <select onchange="updateStreamEC()" name="cashstream" id="cashstreamEC">
+                                    <option value="Expense">Expense</option>
+                                    <option value="Income">Income</option>
+                                </select>
+                            </div>
+                            <canvas id="ExpensesByCategory"></canvas>
+
+                        </div>
+                    </div>
+                    <div class="card"  id="card-3">
+                        <div class="chart-canvas">
+                            <canvas id="ExpensesByPaymentMethod"></canvas>
+                        </div>
+                    </div>
+                    <div class="card"  id="card-4">
+                        <div class="chart-canvas">
+                            <canvas id="ExpensesByCategoryBenchmark"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="utility.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
